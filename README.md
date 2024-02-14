@@ -1,6 +1,6 @@
 # Scanaze
 $$$$$$$$$$$ S C A N A Z E $$$$$$$$$$$$$
- 
+images.jpeg 
 Etik olmayan arasdirmalara ve illegal proseslere yalniz siz cavabdehsiniz!
  Bu Tool Tehlukesizlik ve Arasdirmalari rahatlasdirmaq ucundur.
  Proxy elave ede bilersiniz.
@@ -17,3 +17,12 @@ ucun istifade oluna biler.
 oz reylerinizle genislendirib istifade ede bilersiniz.
  Xatirlatma: 'Scanaz'da apardiginiz arastirmalarin neticelerini etik yollar ucun istifade edin.
 diger illegal prosesler ucun mesuliyyet dasinmir.
+
+Instifade sadedir 
+Qurulma:
+git clone --depth=1 https://github.com/mkylmv/Scanaze.git
+Daha sonra faylimiza daxil oluruq.
+chmod + x 
+deyirik.
+bash scanaze 
+Deyib istifadeye baslayiriq.
