@@ -20,9 +20,9 @@ diger illegal prosesler ucun mesuliyyet dasinmir.
 
 Instifade sadedir 
 Qurulma:
-git clone --depth=1 https://github.com/mkylmv/Scanaze.git
+#git clone --depth=1 https://github.com/mkylmv/Scanaze.git
 Daha sonra faylimiza daxil oluruq.
-chmod + x 
+#chmod + x 
 deyirik.
-bash scanaze 
+#bash scanaze 
 Deyib istifadeye baslayiriq.
