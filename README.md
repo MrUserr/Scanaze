@@ -9,10 +9,10 @@ istifadeni genislendirmek ucun Sexsilesdirme ede bilersiniz.
  Nmap emirlerini 186 ci hissede deyismek olar hemcinin diger 
 emirleride bu Tool yeni baslayanlar ucun ve axtarislari avtomatiklesdirmek
 ucun istifade oluna biler.
- Gobuster wordlist kitapxanasinida manual deyise bilersiniz.
- Nmap-de Aqressiv axtaris ucun -A (default beledir) istifade edin.
- Proxy istifadesi ucun sadece
- "proxychains4(ve ya sizin sexsi proxyleriniz) nmap -sC -sV *%TARGET%*" kimi istifade etmeyiniz meslehetdir.
+Gobuster wordlist kitapxanasinida manual deyise bilersiniz.
+Nmap-de Aqressiv axtaris ucun -A (default beledir) istifade edin.
+Proxy istifadesi ucun sadece
+"proxychains4(ve ya sizin sexsi proxyleriniz) nmap -sC -sV *%TARGET%*" kimi istifade etmeyiniz meslehetdir.
  Kod Bash dilinde kodlanib genislendirmek elave fikirleriniz size mexsusdur
 oz reylerinizle genislendirib istifade ede bilersiniz.
  Xatirlatma: 'Scanaz'da apardiginiz arastirmalarin neticelerini etik yollar ucun istifade edin.
@@ -20,9 +20,9 @@ diger illegal prosesler ucun mesuliyyet dasinmir.
 
 Instifade sadedir 
 Qurulma:
-    git clone --depth=1 https://github.com/mkylmv/Scanaze.git
+             git clone --depth=1 https://github.com/mkylmv/Scanaze.git
 Daha sonra faylimiza daxil oluruq:
-    chmod + x 
+             chmod + x 
 deyirik:
-    bash scanaze 
+             bash scanaze 
 Deyib istifadeye baslayiriq.
