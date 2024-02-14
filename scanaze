@@ -1,0 +1,214 @@
+#!/bin/bash
+
+echo -e "$(tput setaf 1)$(figlet -f slant "Scanaze")$(tput sgr0)"
+
+echo "$(tput setaf 3)$(jp2a --width=60 images.jpeg)$(tput sgr0)"
+
+echo "Etik olmayan arasdirmalara ve illegal proseslere yalniz siz cavabdehsiniz! Bu Tool Tehlukesizlik ve Arasdirmalari rahatlasdirmaq ucundur.Proxy elave ede bilersiniz.Scanaze version-1.1"  
+#bu Tool Nmap Sqlmap Nikto Ve Gobuster toollarinin bir yere yigilmis halidir istifadeni genislendirmek ucun Sexsilesdirme ede bilersiniz.Nmap emirlerini 186 ci hissede deyismek olar hemcinin diger emirleride bu Tool yeni baslayanlar ucun ve axtarislari avtomatiklesdirmek ucun istifade oluna biler.
+
+read -p "Analiz edilecek web saytinin URL'sini yazin (meselen, https & http://meselen.com): " target_url
+
+scan_website() {
+    local url=$1
+    local wordlist="/usr/share/wordlists/dirb/common.txt"
+
+    echo "URL kitabxanalari axtarilir...Sebirli olaq;)"
+    gobuster dir -u "$url" -w "$wordlist"
+}
+
+scan_website "$target_url"
+
+check_response_code() {
+    local url=$1
+    local response_code=$(curl -s -k -o /dev/null -w "%{http_code}" "$url")
+
+    echo "Web saytinin HTTP & HTTPs veziyyet kodu: $response_code"
+
+    case $response_code in
+         200)
+            echo "200 - OK: $url"
+            ;;
+        201)
+            echo "201 - Quruldu: $url"
+            ;;
+        202)
+            echo "202 - Qebul Edildi: $url"
+            ;;
+        203)
+            echo "203 - Lisensiya Bilgisi: $url"
+            ;;
+        204)
+            echo "204 - Bosdur: $url"
+            ;;
+        205)
+            echo "205 - Yeniden Tip Düzeltme: $url"
+            ;;
+        206)
+            echo "206 - qismi dir: $url"
+            ;;
+        300)
+            echo "300 - Birden Cox Seçim: $url"
+            ;;
+        301)
+            echo "301 - Daşındı: $url"
+            ;;
+        302)
+            echo "302 - Keçici Daşındı: $url"
+            ;;
+        303)
+            echo "303 - Diger Yerden Tap: $url"
+            ;;
+        304)
+            echo "304 - Deyişdirilmedi: $url"
+            ;;
+        305)
+            echo "305 - Proxy istifadesi lazimdir: $url"
+            ;;
+        306)
+            echo "306 - Istifade Olunmur: $url"
+            ;;
+        307)
+            echo "307 - Keçici Istiqametlendirme: $url"
+            ;;
+        308)
+            echo "308 - Qalıcı Istiqametlendirme: $url"
+            ;;
+        400)
+            echo "400 - Xetalı İstek: $url"
+            ;;
+        401)
+            echo "401 - Lisensiyasiz: $url"
+            ;;
+        402)
+            echo "402 - Odeme(pay) vacibdir: $url"
+            ;;
+        403)
+            echo "403 - Qanunsuzdur:(: $url"
+            ;;
+        404)
+            echo "404 - Tapilmadi:(: $url"
+            ;;
+        405)
+            echo "405 - İcaze Verilmeyen Metod: $url"
+            ;;
+        406)
+            echo "406 - Qebul Edilmez: $url"
+            ;;
+        407)
+            echo "407 - Proxy Faktor(kimlik) Doğrulaması Lazimdir: $url"
+            ;;
+        408)
+            echo "408 - İstek Timeout-a Uğradı: $url"
+            ;;
+        409)
+            echo "409 - Toqqusma: $url"
+            ;;
+        410)
+            echo "410 - Artiq Yoxdur: $url"
+            ;;
+        411)
+            echo "411 - Uzunluq Lazimdir: $url"
+            ;;
+        412)
+            echo "412 - Verilen Ugursuzdur: $url"
+            ;;
+        413)
+            echo "413 - İsteyin Boyu Coxdur: $url"
+            ;;
+        414)
+            echo "414 - İstek-URI Çox Uzundur: $url"
+            ;;
+        415)
+            echo "415 - Desteklenmeyen Medya Novu: $url"
+            ;;
+        416)
+            echo "416 - Aralıq xarici: $url"
+            ;;
+        417)
+            echo "417 - Gozlenen Ugursuz: $url"
+            ;;
+        418)
+            echo "418 - Teapot: $url"
+            ;;
+        421)
+            echo "421 - Hedefe Catılamadı: $url"
+            ;;
+        422)
+            echo "422 - Gucsuz Menbeler: $url"
+            ;;
+         423)
+            echo "423 - Private: $url"
+            ;;
+        424)
+            echo "424 - Bağlılıq Xetası: $url"
+            ;;
+        426)
+            echo "426 - Güncelleme Lazimdir: $url"
+            ;;
+        428)
+            echo "428 - Veya İstek lazimdir: $url"
+            ;;
+        429)
+            echo "429 - Çok İstek: $url"
+            ;;
+        431)
+            echo "431 - Header Hissesi Çox Boyük: $url"
+            ;;
+        451)
+            echo "451 - Qanunsuz(elcatmaz): $url"
+            ;;
+        500)
+            echo "500 - Sunucu Xetası: $url"
+            ;;
+        501)
+            echo "501 - Qurasdirilmamış: $url"
+            ;;
+        *)
+            echo "Diger Kod: $response_code - $url"
+            ;;
+    esac
+}
+
+
+analyze_security_vulnerabilities() {
+    local url=$1
+    echo "Tehlukesizlik açıqları analiz edilir..."
+    
+    echo "1. Açıq Portları Scan Et"
+    echo "2. SQL Injeksiyasi Axtar"
+    echo "3. Umumi Tehlukesizlik Yoxlamalari Et"
+    read -p "Devam etmek uçun bir nomre seçin (meselen, '1' ve ya '1 2'): " choices
+    
+    for choice in $choices; do
+        case $choice in
+            1)
+                echo "Açıq Portlar Scan Edilir #proses uzun ola biler:( #..."
+#Aqressif axtaris ucun -A istifade edin nmap-de
+                nmap_result=$(nmap -sV -sC -A "$url" 2>/dev/null)
+                echo "$nmap_result"
+                ;;
+            2)
+                echo "SQL Injeksiyasi Axtarilir..."
+                sqlmap_result=$(sqlmap -u "$url" --batch --risk=3 --level=5 2>/dev/null)
+                echo "$sqlmap_result"
+                ;;
+            3)
+                echo "Umumi Tehlukesizlik Yoxlamalari Aparilir..."
+                nikto_result=$(nikto -h "$url" 2>/dev/null)
+                echo "$nikto_result"
+                ;;
+            *)
+                echo "Keçersiz seçim(Etrafli arasdirma ucun nomrelerden birini secin): $choice"
+                ;;
+        esac
+    done
+    
+    echo "Tehlukesizlik analizi tamamlandı. Ugurlar."
+    echo "Xatirlatma: 'Scanaz'da apardiginiz arastirmalarin neticelerini etik yollar ucun istifade edin." 
+}
+
+
+check_response_code "$target_url"
+
+analyze_security_vulnerabilities "$target_url"
