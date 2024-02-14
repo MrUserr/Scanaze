@@ -1,6 +1,6 @@
 # Scanaze
 $$$$$$$$$$$ S C A N A Z E $$$$$$$$$$$$$
-images.jpeg 
+# import images.jpeg 
 Etik olmayan arasdirmalara ve illegal proseslere yalniz siz cavabdehsiniz!
  Bu Tool Tehlukesizlik ve Arasdirmalari rahatlasdirmaq ucundur.
  Proxy elave ede bilersiniz.
