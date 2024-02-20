@@ -1,5 +1,6 @@
-![Screenshot_2024-02-14_09_14_46](https://github.com/mkylmv/Scanaze/assets/142898692/c5485a3a-7544-4dd3-a905-90f0e0ca0406)
+
 $$$$$$$$$$$ S C A N A Z E $$$$$$$$$$$$$
+![Screenshot_2024-02-14_09_14_46](https://github.com/mkylmv/Scanaze/assets/142898692/c5485a3a-7544-4dd3-a905-90f0e0ca0406)
 Etik olmayan arasdirmalara ve illegal proseslere yalniz siz cavabdehsiniz!
  Bu Tool Tehlukesizlik ve Arasdirmalari rahatlasdirmaq ucundur.
  Proxy elave ede bilersiniz.
